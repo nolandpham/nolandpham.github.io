@@ -50,7 +50,17 @@ a:hover {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Space between image and text */
 }
+
+/* Logo Text */
+.site-header .logo a span {
+    font-size: 1.5rem; /* Match the previous text size */
+    color: var(--text-color);
+}
+
 
 .site-header .site-nav a {
     font-size: 1rem;
