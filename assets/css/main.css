@@ -1,0 +1,109 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #3a7bfd;
+    --header-bg: #222222;
+    --sidebar-bg: #202020;
+    --sidebar-width: 240px;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+    background-color: var(--header-bg);
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.site-header .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.site-header .site-nav a {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Page Wrapper */
+.page-wrapper {
+    display: flex;
+    padding-top: var(--header-height); /* Offset for fixed header */
+}
+
+/* Sidebar */
+.left-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    height: calc(100vh - var(--header-height));
+    position: fixed;
+    left: 0;
+    top: var(--header-height);
+    border-right: 1px solid #333;
+    padding: 2rem 1rem;
+}
+
+.left-sidebar ul {
+    list-style: none;
+}
+
+.left-sidebar li {
+    margin-bottom: 1rem;
+}
+
+.left-sidebar a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width); /* Offset for fixed sidebar */
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+}
+
+/* Logo Image */
+.site-header .logo img {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+    vertical-align: middle;
+}
