@@ -1,0 +1,75 @@
+- company: "Athena Studio"
+  title: "Senior Backend Developer"
+  dates: "Feb 2023 - Present"
+  location: "Ho Chi Minh City, Vietnam"
+  description: |
+    - On-site work with Google Cloud Platform (GCP) and PlayFab.
+
+- company: "Sakugen Inc"
+  title: "Senior Back End Developer"
+  dates: "Feb 2020 - Jan 2023"
+  location: "United States (Remote)"
+  description: |
+    - Developed for a blockchain startup creating a short-form video hosting service similar to TikTok.
+    - Programmed all backend services (8 microservices) and performed DevOps tasks.
+    - Utilized over 15 AWS services including EC2, EKS, MediaConvert, Lambda, RDS, S3, SQS, ELB, ElastiCache, and Kafka.
+
+- company: "Vietmoney"
+  title: "Senior Software Engineer"
+  dates: "Sep 2019 - Feb 2020"
+  location: "Ho Chi Minh City, Vietnam"
+  description: |
+    - Designed and implemented a Distributed Crawler system.
+    - Developed an algorithm to predict the price of specialized SIM cards.
+    - Created a website using Magento 2.4.
+
+- company: "FPT Software"
+  title: "Senior Engineer"
+  dates: "Feb 2017 - Aug 2019"
+  location: "Vietnam"
+  description: |
+    - Worked on Machine Learning and Big Data projects.
+    - Utilized Python Flask and Django.
+    - Acted as PHP Leader for a project with 30 members.
+
+- company: "Ora SmartHome"
+  title: "Senior Python Developer & Co-founder"
+  dates: "Apr 2016 - Mar 2017"
+  location: "Ho Chi Minh City, Vietnam"
+  description: |
+    - Co-founded a startup with 4 members and an angel investor.
+    - Served as Software Developer and Platform Architect.
+    - Designed IoT protocols, created architecture documents, and performed system security checks.
+    - Developed SmartHome platform (Python, Flask, Django, MySQL, AWS) and IPTivi projects (PHP-Laravel).
+
+- company: "TRANSCOSMOS TECHNOLOGIC ARTS CO., LTD"
+  title: "Senior PHP Developer"
+  dates: "May 2015 - Mar 2016"
+  location: "Ho Chi Minh, Viet Nam"
+  description: |
+    - Developed outsourced websites using Drupal, EC-Cube, and Laravel.
+    - Worked in a 6-member team using Scrum and TDD.
+    - Utilized support technologies like Jenkins and Vagrant.
+
+- company: "JV-IT"
+  title: "PHP sub-leader"
+  dates: "Aug 2014 - May 2015"
+  location: "Ho Chi Minh, Viet Nam"
+  description: |
+    - Worked as an outsource team for ZENRIN DataCom CO., Ltd.
+    - Programmed with Laravel 4 and Google Map API.
+    - Led a team of 3 persons.
+
+- company: "Mulodo Viet Nam"
+  title: "Web Developer"
+  dates: "Feb 2013 - Aug 2014"
+  location: "Ho Chi Minh, Viet Nam"
+  description: |
+    - Web developer.
+
+- company: "Quynh Minh Ldt."
+  title: "Wordpress Developer"
+  dates: "Feb 2012 - Jul 2013"
+  location: "Ho Chi Minh, Viet Nam"
+  description: |
+    - Wrote Wordpress themes and plugins.

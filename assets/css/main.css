@@ -50,17 +50,16 @@ a:hover {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically align items */
-    gap: 10px; /* Space between image and text */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Logo Text */
 .site-header .logo a span {
-    font-size: 1.5rem; /* Match the previous text size */
+    font-size: 1.5rem;
     color: var(--text-color);
 }
-
 
 .site-header .site-nav a {
     font-size: 1rem;
@@ -117,3 +116,129 @@ h1, h2, h3 {
     width: auto;
     vertical-align: middle;
 }
+
+/* Project List Styling */
+.project-item {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.project-date {
+
+    color: #888;
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+
+/* Education List Styling */
+
+.education-item {
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+.education-dates {
+
+
+
+    color: #888;
+
+
+
+    margin-bottom: 0.5rem;
+
+
+
+}
+
+
+
+
+
+
+
+/* Experience List Styling */
+
+
+
+.experience-item {
+
+
+
+    margin-bottom: 2rem;
+
+
+
+}
+
+
+
+
+
+
+
+.experience-item h3 {
+
+
+
+    margin-bottom: 0.25rem;
+
+
+
+}
+
+
+
+
+
+
+
+.experience-dates {
+
+
+
+    color: #888;
+
+
+
+    margin-bottom: 0.75rem;
+
+
+
+}
+
+
+
+
+
+
+
+.experience-item ul {
+
+
+
+    list-style-position: inside;
+
+
+
+    padding-left: 1rem;
+
+
+
+}
+
+
+
+
