@@ -1,12 +1,27 @@
 :root {
+    /* Default: Dark Mode */
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
     --primary-color: #3a7bfd;
     --header-bg: #222222;
     --sidebar-bg: #202020;
-    --sidebar-width: 240px;
-    --header-height: 60px;
+    --border-color: #333;
+    --heading-color: #f5f5f5;
+    --subtle-text-color: #888;
 }
+
+body.light-mode {
+    /* Light Mode */
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --primary-color: #0056b3;
+    --header-bg: #ffffff;
+    --sidebar-bg: #fdfdfd;
+    --border-color: #e0e0e0;
+    --heading-color: #111111;
+    --subtle-text-color: #666;
+}
+
 
 * {
     margin: 0;
@@ -19,6 +34,7 @@ body {
     color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 a {
@@ -33,7 +49,7 @@ a:hover {
 /* Header */
 .site-header {
     background-color: var(--header-bg);
-    height: var(--header-height);
+    height: var(--header-height, 60px);
     width: 100%;
     position: fixed;
     top: 0;
@@ -43,11 +59,11 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
 }
 
 .site-header .logo a {
-    font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
     display: flex;
@@ -55,10 +71,15 @@ a:hover {
     gap: 10px;
 }
 
-/* Logo Text */
 .site-header .logo a span {
     font-size: 1.5rem;
     color: var(--text-color);
+}
+
+.site-header .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .site-header .site-nav a {
@@ -66,179 +87,72 @@ a:hover {
     color: var(--text-color);
 }
 
+#theme-toggle {
+    background: var(--border-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 /* Page Wrapper */
 .page-wrapper {
     display: flex;
-    padding-top: var(--header-height); /* Offset for fixed header */
+    padding-top: var(--header-height, 60px);
 }
 
 /* Sidebar */
 .left-sidebar {
-    width: var(--sidebar-width);
+    width: var(--sidebar-width, 240px);
     background-color: var(--sidebar-bg);
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height, 60px));
     position: fixed;
     left: 0;
-    top: var(--header-height);
-    border-right: 1px solid #333;
+    top: var(--header-height, 60px);
+    border-right: 1px solid var(--border-color);
     padding: 2rem 1rem;
+    transition: background-color 0.2s;
 }
 
-.left-sidebar ul {
-    list-style: none;
-}
-
-.left-sidebar li {
-    margin-bottom: 1rem;
-}
-
-.left-sidebar a {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    display: block;
-}
+.left-sidebar ul { list-style: none; }
+.left-sidebar li { margin-bottom: 1rem; }
+.left-sidebar a { font-size: 1.1rem; color: var(--text-color); display: block; }
 
 /* Main Content */
 .main-content {
     flex-grow: 1;
-    margin-left: var(--sidebar-width); /* Offset for fixed sidebar */
+    margin-left: var(--sidebar-width, 240px);
     padding: 2rem;
 }
 
 h1, h2, h3 {
     margin-bottom: 1rem;
-    color: #f5f5f5;
+    color: var(--heading-color);
 }
 
 /* Logo Image */
 .site-header .logo img {
-    height: 40px; /* Adjust as needed */
+    height: 40px;
     width: auto;
     vertical-align: middle;
 }
 
 /* Project List Styling */
 .project-item {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 }
-
-.project-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.project-date {
-
-    color: #888;
-
-    margin-bottom: 0.5rem;
-
-}
-
-
+.project-item:last-child { border-bottom: none; margin-bottom: 0; }
+.project-date { color: var(--subtle-text-color); margin-bottom: 0.5rem; }
 
 /* Education List Styling */
-
-.education-item {
-
-    margin-bottom: 1.5rem;
-
-}
-
-
-
-.education-dates {
-
-
-
-    color: #888;
-
-
-
-    margin-bottom: 0.5rem;
-
-
-
-}
-
-
-
-
-
-
+.education-item { margin-bottom: 1.5rem; }
+.education-dates { color: var(--subtle-text-color); margin-bottom: 0.5rem; }
 
 /* Experience List Styling */
-
-
-
-.experience-item {
-
-
-
-    margin-bottom: 2rem;
-
-
-
-}
-
-
-
-
-
-
-
-.experience-item h3 {
-
-
-
-    margin-bottom: 0.25rem;
-
-
-
-}
-
-
-
-
-
-
-
-.experience-dates {
-
-
-
-    color: #888;
-
-
-
-    margin-bottom: 0.75rem;
-
-
-
-}
-
-
-
-
-
-
-
-.experience-item ul {
-
-
-
-    list-style-position: inside;
-
-
-
-    padding-left: 1rem;
-
-
-
-}
-
-
-
-
+.experience-item { margin-bottom: 2rem; }
+.experience-item h3 { margin-bottom: 0.25rem; }
+.experience-dates { color: var(--subtle-text-color); margin-bottom: 0.75rem; }
+.experience-item ul { list-style-position: inside; padding-left: 1rem; }
