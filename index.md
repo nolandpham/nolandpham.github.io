@@ -1,5 +1,6 @@
 ---
 title: AnPham Blog
+layout: default
 ---
 
 # Welcome to AnPham Blog
