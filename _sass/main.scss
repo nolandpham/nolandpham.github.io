@@ -199,6 +199,14 @@ body {
 .theme-dot[data-t="peach"]    { background: #E59866; }
 .theme-dot[data-t="nord"]     { background: #5E81AC; }
 
+/* ── Typography ── */
+.content-inner hr {
+  border: none;
+  border-bottom: 12px solid var(--accent);
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .container { flex-direction: column; }
