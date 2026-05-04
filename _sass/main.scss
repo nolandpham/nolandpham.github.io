@@ -152,6 +152,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
+  border-bottom: 3px solid var(--accent);
   padding: 2rem;
 }
 
