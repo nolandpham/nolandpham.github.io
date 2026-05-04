@@ -2,11 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Branch workflow
+
+```
+draft   ← write new posts (unpublished)
+  ↓ merge PR
+master  ← review and edit
+  ↓ merge PR
+release ← triggers CI/CD → deploys to public internet
+```
+
 ## Deploy
 
-Push to `origin/main` → GitHub Pages auto-deploys. Site live at https://nolandpham.github.io
+Merging into `release` triggers `.github/workflows/publish.yml`, which builds Jekyll and deploys to GitHub Pages. Site live at https://nolandpham.github.io
 
-No local build needed — GitHub Pages runs Jekyll automatically.
+No local build needed.
 
 ## Stack
 
