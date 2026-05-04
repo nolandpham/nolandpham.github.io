@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'matcha';
+      if (t !== 'matcha') document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -21,10 +27,45 @@
         </div>
         {% endfor %}
       </nav>
+
+      <div class="theme-switcher">
+        <p>Theme</p>
+        <div class="theme-dots">
+          <div class="theme-dot" data-t="matcha"   title="Matcha Latte"></div>
+          <div class="theme-dot" data-t="ocean"    title="Ocean Mist"></div>
+          <div class="theme-dot" data-t="lavender" title="Lavender Breeze"></div>
+          <div class="theme-dot" data-t="peach"    title="Peach Fuzz"></div>
+          <div class="theme-dot" data-t="nord"     title="Nord Minimal"></div>
+        </div>
+      </div>
     </aside>
     <main class="content">
       {{ content }}
     </main>
   </div>
+
+  <script>
+    var current = localStorage.getItem('theme') || 'matcha';
+
+    function applyTheme(t) {
+      if (t === 'matcha') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+      localStorage.setItem('theme', t);
+      document.querySelectorAll('.theme-dot').forEach(function(d) {
+        d.classList.toggle('active', d.dataset.t === t);
+      });
+    }
+
+    applyTheme(current);
+
+    document.querySelectorAll('.theme-dot').forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        applyTheme(this.dataset.t);
+      });
+    });
+  </script>
 </body>
 </html>

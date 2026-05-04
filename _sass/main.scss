@@ -1,3 +1,50 @@
+/* ── Theme variables ── */
+:root {
+  --bg:       #FAFAF7;
+  --sidebar:  #E8EDE3;
+  --text:     #3D4A35;
+  --accent:   #7BA05B;
+  --border:   #D5DDD0;
+  --hover:    #D4E0CC;
+}
+
+[data-theme="ocean"] {
+  --bg:       #F0F6FB;
+  --sidebar:  #D6EAF8;
+  --text:     #2C3E50;
+  --accent:   #5DADE2;
+  --border:   #C2D9EE;
+  --hover:    #BDD6EE;
+}
+
+[data-theme="lavender"] {
+  --bg:       #F9F7FD;
+  --sidebar:  #EDE7F6;
+  --text:     #37306B;
+  --accent:   #9575CD;
+  --border:   #D9D0F0;
+  --hover:    #D5C9EE;
+}
+
+[data-theme="peach"] {
+  --bg:       #FFF8F5;
+  --sidebar:  #FDEBD0;
+  --text:     #5D3A1A;
+  --accent:   #E59866;
+  --border:   #F5D5B0;
+  --hover:    #FAD7A0;
+}
+
+[data-theme="nord"] {
+  --bg:       #ECEFF4;
+  --sidebar:  #E5E9F0;
+  --text:     #2E3440;
+  --accent:   #5E81AC;
+  --border:   #D0D6E0;
+  --hover:    #D8DEE9;
+}
+
+/* ── Base ── */
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +54,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: #f5f5f5;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s, color 0.3s;
 }
 
+/* ── Layout ── */
 .container {
   display: flex;
   min-height: 100vh;
@@ -18,14 +67,16 @@ body {
 
 .sidebar {
   width: 280px;
-  background: #fff;
+  background: var(--sidebar);
   padding: 2rem;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid var(--border);
   position: fixed;
   height: 100vh;
   overflow-y: auto;
+  transition: background 0.3s;
 }
 
+/* ── Navigation ── */
 .para-nav .para-section {
   margin-bottom: 1.5rem;
 }
@@ -34,7 +85,7 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #666;
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
@@ -49,16 +100,17 @@ body {
 .para-nav a {
   display: block;
   padding: 0.5rem 0.75rem;
-  color: #333;
+  color: var(--text);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: background 0.2s;
 }
 
 .para-nav a:hover {
-  background: #f0f0f0;
+  background: var(--hover);
 }
 
+/* ── Content ── */
 .content {
   flex: 1;
   margin-left: 280px;
@@ -66,20 +118,60 @@ body {
   max-width: 800px;
 }
 
+/* ── Theme switcher ── */
+.theme-switcher {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.theme-switcher p {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.theme-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.theme-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.theme-dot:hover {
+  transform: scale(1.2);
+}
+
+.theme-dot.active {
+  border-color: var(--text);
+}
+
+.theme-dot[data-t="matcha"]   { background: #7BA05B; }
+.theme-dot[data-t="ocean"]    { background: #5DADE2; }
+.theme-dot[data-t="lavender"] { background: #9575CD; }
+.theme-dot[data-t="peach"]    { background: #E59866; }
+.theme-dot[data-t="nord"]     { background: #5E81AC; }
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+  .container { flex-direction: column; }
 
   .sidebar {
     position: relative;
     width: 100%;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .content {
-    margin-left: 0;
-  }
+  .content { margin-left: 0; }
 }
