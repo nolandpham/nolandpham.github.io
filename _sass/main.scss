@@ -2,6 +2,8 @@
 :root {
   --bg:       #FAFAF7;
   --sidebar:  #E8EDE3;
+  --sidebar-rgba: rgba(232, 237, 227, 0.88);
+  --bg-rgba:  rgba(250, 250, 247, 0.82);
   --text:     #3D4A35;
   --accent:   #7BA05B;
   --border:   #D5DDD0;
@@ -9,39 +11,47 @@
 }
 
 [data-theme="ocean"] {
-  --bg:       #F0F6FB;
-  --sidebar:  #D6EAF8;
-  --text:     #2C3E50;
-  --accent:   #5DADE2;
-  --border:   #C2D9EE;
-  --hover:    #BDD6EE;
+  --bg:           #F0F6FB;
+  --sidebar:      #D6EAF8;
+  --sidebar-rgba: rgba(214, 234, 248, 0.88);
+  --bg-rgba:      rgba(240, 246, 251, 0.82);
+  --text:         #2C3E50;
+  --accent:       #5DADE2;
+  --border:       #C2D9EE;
+  --hover:        #BDD6EE;
 }
 
 [data-theme="lavender"] {
-  --bg:       #F9F7FD;
-  --sidebar:  #EDE7F6;
-  --text:     #37306B;
-  --accent:   #9575CD;
-  --border:   #D9D0F0;
-  --hover:    #D5C9EE;
+  --bg:           #F9F7FD;
+  --sidebar:      #EDE7F6;
+  --sidebar-rgba: rgba(237, 231, 246, 0.88);
+  --bg-rgba:      rgba(249, 247, 253, 0.82);
+  --text:         #37306B;
+  --accent:       #9575CD;
+  --border:       #D9D0F0;
+  --hover:        #D5C9EE;
 }
 
 [data-theme="peach"] {
-  --bg:       #FFF8F5;
-  --sidebar:  #FDEBD0;
-  --text:     #5D3A1A;
-  --accent:   #E59866;
-  --border:   #F5D5B0;
-  --hover:    #FAD7A0;
+  --bg:           #FFF8F5;
+  --sidebar:      #FDEBD0;
+  --sidebar-rgba: rgba(253, 235, 208, 0.88);
+  --bg-rgba:      rgba(255, 248, 245, 0.82);
+  --text:         #5D3A1A;
+  --accent:       #E59866;
+  --border:       #F5D5B0;
+  --hover:        #FAD7A0;
 }
 
 [data-theme="nord"] {
-  --bg:       #ECEFF4;
-  --sidebar:  #E5E9F0;
-  --text:     #2E3440;
-  --accent:   #5E81AC;
-  --border:   #D0D6E0;
-  --hover:    #D8DEE9;
+  --bg:           #ECEFF4;
+  --sidebar:      #E5E9F0;
+  --sidebar-rgba: rgba(229, 233, 240, 0.88);
+  --bg-rgba:      rgba(236, 239, 244, 0.82);
+  --text:         #2E3440;
+  --accent:       #5E81AC;
+  --border:       #D0D6E0;
+  --hover:        #D8DEE9;
 }
 
 /* ── Base ── */
@@ -56,27 +66,24 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
-  background-image: var(--bg-image, url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop'));
+  background-image: url('https://images.unsplash.com/photo-1605106702842-01a887a31122?w=1600&q=80&fm=jpg&fit=crop');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   transition: background-color 0.3s, color 0.3s;
 }
 
-[data-theme="matcha"] {
-  --bg-image: url('https://images.unsplash.com/photo-1605106702842-01a887a31122?w=1600&q=80&fm=jpg&fit=crop');
+[data-theme="ocean"] body {
+  background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&fm=jpg&fit=crop');
 }
-[data-theme="ocean"] {
-  --bg-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&fm=jpg&fit=crop');
+[data-theme="lavender"] body {
+  background-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc8e?w=1600&q=80&fm=jpg&fit=crop');
 }
-[data-theme="lavender"] {
-  --bg-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc8e?w=1600&q=80&fm=jpg&fit=crop');
+[data-theme="peach"] body {
+  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&fm=jpg&fit=crop');
 }
-[data-theme="peach"] {
-  --bg-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&fm=jpg&fit=crop');
-}
-[data-theme="nord"] {
-  --bg-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop');
+[data-theme="nord"] body {
+  background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop');
 }
 
 /* ── Layout ── */
@@ -87,7 +94,7 @@ body {
 
 .sidebar {
   width: 280px;
-  background: color-mix(in srgb, var(--sidebar) 90%, transparent);
+  background: var(--sidebar-rgba);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 2rem;
@@ -141,7 +148,7 @@ body {
 }
 
 .content > * {
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  background: var(--bg-rgba);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
