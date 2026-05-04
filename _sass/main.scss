@@ -147,7 +147,7 @@ body {
   max-width: 800px;
 }
 
-.content > * {
+.content-inner {
   background: var(--bg-rgba);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
