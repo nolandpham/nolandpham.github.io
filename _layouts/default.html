@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script>
     (function() {
-      var t = localStorage.getItem('theme') || 'matcha';
+      var t = localStorage.getItem('theme') || 'nord';
       if (t !== 'matcha') document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -45,7 +45,7 @@
   </div>
 
   <script>
-    var current = localStorage.getItem('theme') || 'matcha';
+    var current = localStorage.getItem('theme') || 'nord';
 
     function applyTheme(t) {
       if (t === 'matcha') {

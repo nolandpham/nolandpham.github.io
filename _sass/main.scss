@@ -55,8 +55,28 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
-  transition: background 0.3s, color 0.3s;
+  background-color: var(--bg);
+  background-image: var(--bg-image, url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop'));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="matcha"] {
+  --bg-image: url('https://images.unsplash.com/photo-1605106702842-01a887a31122?w=1600&q=80&fm=jpg&fit=crop');
+}
+[data-theme="ocean"] {
+  --bg-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&fm=jpg&fit=crop');
+}
+[data-theme="lavender"] {
+  --bg-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc8e?w=1600&q=80&fm=jpg&fit=crop');
+}
+[data-theme="peach"] {
+  --bg-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&fm=jpg&fit=crop');
+}
+[data-theme="nord"] {
+  --bg-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop');
 }
 
 /* ── Layout ── */
@@ -67,7 +87,9 @@ body {
 
 .sidebar {
   width: 280px;
-  background: var(--sidebar);
+  background: color-mix(in srgb, var(--sidebar) 90%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 2rem;
   border-right: 1px solid var(--border);
   position: fixed;
@@ -116,6 +138,14 @@ body {
   margin-left: 280px;
   padding: 2rem;
   max-width: 800px;
+}
+
+.content > * {
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 2rem;
 }
 
 /* ── Theme switcher ── */
