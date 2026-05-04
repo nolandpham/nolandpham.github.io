@@ -1,0 +1,35 @@
+- title: Projects
+  links:
+    - label: All Projects
+      url: /projects/
+    - label: Active
+      url: /projects/active/
+    - label: Completed
+      url: /projects/completed/
+
+- title: Areas
+  links:
+    - label: Overview
+      url: /areas/
+    - label: Career
+      url: /areas/career/
+    - label: Health
+      url: /areas/health/
+    - label: Learning
+      url: /areas/learning/
+
+- title: Resources
+  links:
+    - label: All Resources
+      url: /resources/
+    - label: Notes
+      url: /resources/notes/
+    - label: Tools
+      url: /resources/tools/
+
+- title: Archives
+  links:
+    - label: Browse Archives
+      url: /archives/
+    - label: Blog Posts
+      url: /blog/

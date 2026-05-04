@@ -10,38 +10,16 @@
   <div class="container">
     <aside class="sidebar">
       <nav class="para-nav">
+        {% for section in site.data.navigation %}
         <div class="para-section">
-          <h3>P - Projects</h3>
+          <h3>{{ section.title }}</h3>
           <ul>
-            <li><a href="/projects/">All Projects</a></li>
-            <li><a href="/projects/active/">Active</a></li>
-            <li><a href="/projects/completed/">Completed</a></li>
+            {% for link in section.links %}
+            <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+            {% endfor %}
           </ul>
         </div>
-        <div class="para-section">
-          <h3>A - Areas</h3>
-          <ul>
-            <li><a href="/areas/">Overview</a></li>
-            <li><a href="/areas/career/">Career</a></li>
-            <li><a href="/areas/health/">Health</a></li>
-            <li><a href="/areas/learning/">Learning</a></li>
-          </ul>
-        </div>
-        <div class="para-section">
-          <h3>R - Resources</h3>
-          <ul>
-            <li><a href="/resources/">All Resources</a></li>
-            <li><a href="/resources/notes/">Notes</a></li>
-            <li><a href="/resources/tools/">Tools</a></li>
-          </ul>
-        </div>
-        <div class="para-section">
-          <h3>A - Archives</h3>
-          <ul>
-            <li><a href="/archives/">Browse Archives</a></li>
-            <li><a href="/blog/">Blog Posts</a></li>
-          </ul>
-        </div>
+        {% endfor %}
       </nav>
     </aside>
     <main class="content">
