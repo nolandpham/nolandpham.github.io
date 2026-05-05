@@ -282,6 +282,10 @@ body {
 
 /* Tablet dọc: content full width khi sidebar ẩn */
 @media (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+  }
   .sidebar {
     position: fixed;
     top: 0;
@@ -309,7 +313,11 @@ body {
 
 /* Mobile: ≤ 768px — iPhone 15 Pro Max (430px), iPad Mini portrait (768px) */
 @media (max-width: 768px) {
-  .container { flex-direction: column; }
+  .container {
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+  }
 
   .sidebar-toggle { display: block; }
 
