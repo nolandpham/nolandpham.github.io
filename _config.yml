@@ -2,7 +2,6 @@ title: AnPham Blog
 description: Personal blog
 url: "https://nolandpham.github.io"
 baseurl: ""
-theme: minima
 
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
