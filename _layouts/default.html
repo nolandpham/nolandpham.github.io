@@ -52,6 +52,22 @@
   </div>
 
   <script>
+    document.querySelectorAll('.content-inner pre').forEach(function(pre) {
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', function() {
+        var code = pre.querySelector('code');
+        navigator.clipboard.writeText(code ? code.innerText : pre.innerText).then(function() {
+          btn.textContent = 'Copied!';
+          setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+
+  <script>
     var toggle = document.querySelector('.sidebar-toggle');
     var sidebar = document.getElementById('sidebar');
     toggle.addEventListener('click', function() {
