@@ -230,6 +230,68 @@ body {
 .theme-dot[data-t="peach"]    { background: #E59866; }
 .theme-dot[data-t="nord"]     { background: #5E81AC; }
 
+/* ── List styles ── */
+
+/* Phương án 1: Clean minimal */
+.list-style-1 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0;
+}
+.list-style-1 li {
+  padding: 0.35rem 0 0.35rem 1.4rem;
+  line-height: 1.6;
+  position: relative;
+}
+.list-style-1 li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.6rem;
+  top: 0.55rem;
+}
+
+/* Phương án 2: Card style */
+.list-style-2 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.list-style-2 li {
+  border-left: 3px solid var(--accent);
+  background: var(--hover);
+  border-radius: 0 8px 8px 0;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.6;
+}
+
+/* Phương án 3: Icon dot */
+.list-style-3 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.list-style-3 li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  line-height: 1.6;
+  position: relative;
+}
+.list-style-3 li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.55rem;
+  top: 0.6rem;
+}
+
 /* ── Code blocks ── */
 .content-inner pre {
   position: relative;
