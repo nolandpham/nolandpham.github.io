@@ -280,6 +280,31 @@ body {
   .content { margin-left: 240px; }
 }
 
+/* Tablet dọc: content full width khi sidebar ẩn */
+@media (max-width: 1024px) and (orientation: portrait) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 4rem 1.25rem 1.25rem;
+    z-index: 100;
+    transition: left 0.25s ease;
+  }
+
+  .sidebar.open { left: 0; }
+
+  .sidebar-toggle { display: block; }
+
+  .content {
+    margin-left: 0;
+    max-width: 100%;
+    padding-top: 3.5rem;
+  }
+}
+
 /* Mobile: ≤ 768px — iPhone 15 Pro Max (430px), iPad Mini portrait (768px) */
 @media (max-width: 768px) {
   .container { flex-direction: column; }
