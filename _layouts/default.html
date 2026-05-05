@@ -29,6 +29,21 @@
 
     </aside>
     <main class="content">
+      <nav class="breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        {% assign parts = page.url | remove_first: '/' | split: '/' %}
+        {% assign path = '' %}
+        {% for part in parts %}
+          {% if forloop.last %}
+            <span class="breadcrumb-sep">›</span>
+            <span>{{ page.title | default: part }}</span>
+          {% else %}
+            {% assign path = path | append: '/' | append: part %}
+            <span class="breadcrumb-sep">›</span>
+            <a href="{{ path | relative_url }}">{{ part | replace: '-', ' ' | capitalize }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
       <div class="content-inner">
         {{ content }}
       </div>
