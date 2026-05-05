@@ -69,8 +69,6 @@ exclude:
 
 Lưu ý:
 
-Lưu ý:
-
 - `url` — domain thật của site, dùng cho SEO và RSS feed
 - `baseurl: ""` — để trống nếu site ở root domain (không phải `/blog` subdirectory)
 - `permalink` — format URL cho blog posts
