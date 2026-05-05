@@ -166,6 +166,11 @@ body {
   color: var(--text);
   opacity: 0.7;
   flex-wrap: wrap;
+  background: var(--bg-rgba);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
 }
 
 .breadcrumb a {
