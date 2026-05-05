@@ -301,6 +301,8 @@ body {
   .content {
     margin-left: 0;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     padding-top: 3.5rem;
   }
 }
@@ -331,6 +333,8 @@ body {
     padding: 1rem;
     padding-top: 3.5rem;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .content-inner { padding: 1.25rem; }
