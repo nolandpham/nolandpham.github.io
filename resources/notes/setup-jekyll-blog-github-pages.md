@@ -69,29 +69,13 @@ exclude:
 
 Lưu ý:
 
-**Phương án 1 — Clean minimal:**
+Lưu ý:
 
 - `url` — domain thật của site, dùng cho SEO và RSS feed
 - `baseurl: ""` — để trống nếu site ở root domain (không phải `/blog` subdirectory)
 - `permalink` — format URL cho blog posts
 - `exclude` — các file không đưa vào build output
 {:.list-style-1}
-
-**Phương án 2 — Card style:**
-
-- `url` — domain thật của site, dùng cho SEO và RSS feed
-- `baseurl: ""` — để trống nếu site ở root domain (không phải `/blog` subdirectory)
-- `permalink` — format URL cho blog posts
-- `exclude` — các file không đưa vào build output
-{:.list-style-2}
-
-**Phương án 3 — Icon dot:**
-
-- `url` — domain thật của site, dùng cho SEO và RSS feed
-- `baseurl: ""` — để trống nếu site ở root domain (không phải `/blog` subdirectory)
-- `permalink` — format URL cho blog posts
-- `exclude` — các file không đưa vào build output
-{:.list-style-3}
 
 ---
 
