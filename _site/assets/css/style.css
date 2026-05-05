@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* ── Theme variables ── */
+:root { --bg: #FAFAF7; --sidebar: #E8EDE3; --sidebar-rgba: rgba(232, 237, 227, 0.88); --bg-rgba: rgba(250, 250, 247, 0.82); --text: #3D4A35; --accent: #7BA05B; --border: #D5DDD0; --hover: #D4E0CC; }
+
+[data-theme="ocean"] { --bg: #F0F6FB; --sidebar: #D6EAF8; --sidebar-rgba: rgba(214, 234, 248, 0.88); --bg-rgba: rgba(240, 246, 251, 0.82); --text: #2C3E50; --accent: #5DADE2; --border: #C2D9EE; --hover: #BDD6EE; }
+
+[data-theme="lavender"] { --bg: #F9F7FD; --sidebar: #EDE7F6; --sidebar-rgba: rgba(237, 231, 246, 0.88); --bg-rgba: rgba(249, 247, 253, 0.82); --text: #37306B; --accent: #9575CD; --border: #D9D0F0; --hover: #D5C9EE; }
+
+[data-theme="peach"] { --bg: #FFF8F5; --sidebar: #FDEBD0; --sidebar-rgba: rgba(253, 235, 208, 0.88); --bg-rgba: rgba(255, 248, 245, 0.82); --text: #5D3A1A; --accent: #E59866; --border: #F5D5B0; --hover: #FAD7A0; }
+
+[data-theme="nord"] { --bg: #ECEFF4; --sidebar: #E5E9F0; --sidebar-rgba: rgba(229, 233, 240, 0.88); --bg-rgba: rgba(236, 239, 244, 0.82); --text: #2E3440; --accent: #5E81AC; --border: #D0D6E0; --hover: #D8DEE9; }
+
+/* ── Base ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg); background-image: url("https://images.unsplash.com/photo-1605106702842-01a887a31122?w=1600&q=80&fm=jpg&fit=crop"); background-size: cover; background-position: center; background-attachment: fixed; transition: background-color 0.3s, color 0.3s; }
+
+[data-theme="ocean"] body { background-image: url("https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&fm=jpg&fit=crop"); }
+
+[data-theme="lavender"] body { background-image: url("https://images.unsplash.com/photo-1490750967868-88df5691cc8e?w=1600&q=80&fm=jpg&fit=crop"); }
+
+[data-theme="peach"] body { background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&fm=jpg&fit=crop"); }
+
+[data-theme="nord"] body { background-image: url("https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80&fm=jpg&fit=crop"); }
+
+/* ── Layout ── */
+.container { display: flex; min-height: 100vh; }
+
+.sidebar { width: 280px; background: var(--sidebar-rgba); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 2rem; border-right: 1px solid var(--border); position: fixed; height: 100vh; overflow-y: auto; transition: background 0.3s; }
+
+/* ── Navigation ── */
+.para-nav .para-section { margin-bottom: 1.5rem; }
+
+.para-nav h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+
+.para-nav ul { list-style: none; }
+
+.para-nav li { margin-bottom: 0.25rem; }
+
+.para-nav a { display: block; padding: 0.5rem 0.75rem; color: var(--text); text-decoration: none; border-radius: 6px; transition: background 0.2s; }
+
+.para-nav a:hover { background: var(--hover); }
+
+/* ── Content ── */
+.content { flex: 1; margin-left: 280px; padding: 2rem; max-width: 800px; }
+
+.content-inner { background: var(--bg-rgba); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 12px; border-bottom: 12px solid var(--accent); padding: 2rem; }
+
+/* ── Theme switcher ── */
+.theme-switcher { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+.theme-switcher p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; }
+
+.theme-dots { display: flex; gap: 8px; }
+
+.theme-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: transform 0.15s, border-color 0.15s; }
+
+.theme-dot:hover { transform: scale(1.2); }
+
+.theme-dot.active { border-color: var(--text); }
+
+.theme-dot[data-t="matcha"] { background: #7BA05B; }
+
+.theme-dot[data-t="ocean"] { background: #5DADE2; }
+
+.theme-dot[data-t="lavender"] { background: #9575CD; }
+
+.theme-dot[data-t="peach"] { background: #E59866; }
+
+.theme-dot[data-t="nord"] { background: #5E81AC; }
+
+/* ── Typography ── */
+.content-inner hr { border: none; border-bottom: 12px solid var(--accent); border-radius: 6px; margin: 1.5rem 0; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) { .container { flex-direction: column; }
+  .sidebar { position: relative; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  .content { margin-left: 0; } }
