@@ -238,17 +238,86 @@ body {
   margin: 1.5rem 0;
 }
 
+/* ── Sidebar toggle (mobile only) ── */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  background: var(--sidebar-rgba);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
 /* ── Responsive ── */
+
+/* Tablet dọc: 768px – 1024px (iPad, iPad Mini portrait) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .sidebar {
+    width: 220px;
+    padding: 1.5rem 1rem;
+  }
+
+  .para-nav h3 { font-size: 0.7rem; }
+  .para-nav a  { padding: 0.4rem 0.6rem; font-size: 0.9rem; }
+
+  .content {
+    margin-left: 220px;
+    padding: 1.5rem;
+  }
+}
+
+/* Tablet ngang: 769px – 1024px landscape + iPad Pro portrait ~1024px */
+@media (max-width: 1024px) and (min-width: 769px) and (orientation: landscape) {
+  .sidebar { width: 240px; }
+  .content { margin-left: 240px; }
+}
+
+/* Mobile: ≤ 768px — iPhone 15 Pro Max (430px), iPad Mini portrait (768px) */
 @media (max-width: 768px) {
   .container { flex-direction: column; }
 
+  .sidebar-toggle { display: block; }
+
   .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 260px;
+    height: 100vh;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 4rem 1.25rem 1.25rem;
+    z-index: 100;
+    transition: left 0.25s ease;
   }
 
-  .content { margin-left: 0; }
+  .sidebar.open { left: 0; }
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 3.5rem;
+    max-width: 100%;
+  }
+
+  .content-inner { padding: 1.25rem; }
+
+  .breadcrumb { font-size: 0.75rem; padding: 0.5rem 0.75rem; }
+}
+
+/* iPhone SE / kleine phones: ≤ 375px */
+@media (max-width: 375px) {
+  .para-nav { grid-template-columns: 1fr; }
+
+  .content-inner { padding: 1rem; }
+
+  .para-nav h3 { font-size: 0.65rem; }
 }
