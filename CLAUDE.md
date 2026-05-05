@@ -39,3 +39,16 @@ title: Page title
 layout: default
 ---
 ```
+
+## index.md files
+
+Every directory in the PARA structure contains an `index.md` that acts as the directory listing — it links to all child pages and subdirectories inside that folder.
+
+**Rule: whenever a page is added, removed, or renamed anywhere in the site, the `index.md` of its parent directory must be updated to reflect the change.**
+
+For example:
+- Adding `resources/notes/new-article.md` → update `resources/notes/index.md`
+- Deleting `areas/health/habit-tracker.md` → update `areas/health/index.md`
+- Renaming a file → update the link in the parent `index.md`
+
+This applies to all PARA directories: `projects/`, `areas/`, `resources/`, `archives/`, and `blog/`.
